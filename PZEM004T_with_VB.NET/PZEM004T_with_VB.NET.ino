@@ -11,31 +11,18 @@ void setup() {
 
 void loop() {
   float v = pzem.voltage(ip);
-  if (v < 0.0) v = 0.0;
-  Serial.print(v);/*Serial.print("V; ");*/
-  Serial.print(",");
-  
   float i = pzem.current(ip);
-  if(i >= 0.0)
-  { Serial.print(i);
-  /*Serial.print("A; ");*/ 
-  }
-  Serial.print(",");
-  
   float p = pzem.power(ip);
-  if(p >= 0.0)
-  { Serial.print(p);
-  /*Serial.print("W; ");*/ 
-  }
-  Serial.print(",");
-  
   float e = pzem.energy(ip);
-  if(e >= 0.0)
-  { Serial.print(e);
-  /*Serial.print("Wh; ");*/ 
-  }
+  
+  Serial.print(v);
   Serial.print(",");
-
+  Serial.print(i);
+  Serial.print(",");
+  Serial.print(p);
+  Serial.print(",");
+  Serial.print(e);
+  Serial.print(",");
   Serial.println();
 
   delay(1000);
